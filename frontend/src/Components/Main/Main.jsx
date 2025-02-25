@@ -27,12 +27,23 @@ function Main() {
                     const token = user.token;
                     console.log(token);
                     // Axios GET request
-                    const response = await axios.get(`${API_URL}/api/user/userDetails`, {
+                    // const response = await axios.get(`${API_URL}/api/user/userDetails`, {
+                    //     headers: {
+                    //         Authorization: `Bearer ${token}`,
+                    //         "Content-Type": "application/json",
+                    //     },
+                    // });
+
+                    const response = await axios.get(
+                      `${API_URL}/api/user/userDetails`,
+                      {
+                        withCredentials: true, // Send cookies with request
                         headers: {
-                            Authorization: `Bearer ${token}`,
-                            "Content-Type": "application/json",
+                          "Content-Type": "application/json",
                         },
-                    });
+                      }
+                    );
+
 
                     // Log the response data
                     console.log(response.data, "kk");
