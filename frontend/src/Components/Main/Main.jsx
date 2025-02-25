@@ -13,7 +13,7 @@ import ProtectedRoute from "../Protected/Protect";
 
 function Main() {
     const location = useLocation();
-    const API_URL = "https://taskmanagerreact-4.onrender.com";
+    const API_URL = "http://localhost:3005";
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -27,23 +27,12 @@ function Main() {
                     const token = user.token;
                     console.log(token);
                     // Axios GET request
-                    // const response = await axios.get(`${API_URL}/api/user/userDetails`, {
-                    //     headers: {
-                    //         Authorization: `Bearer ${token}`,
-                    //         "Content-Type": "application/json",
-                    //     },
-                    // });
-
-                    const response = await axios.get(
-                      `${API_URL}/api/user/userDetails`,
-                      {
-                        withCredentials: true, // Send cookies with request
+                    const response = await axios.get(`${API_URL}/api/user/userDetails`, {
                         headers: {
-                          "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                            "Content-Type": "application/json",
                         },
-                      }
-                    );
-
+                    });
 
                     // Log the response data
                     console.log(response.data, "kk");
@@ -71,7 +60,7 @@ function Main() {
                 <Route path="/admin"  element={
                         <ProtectedRoute
                             element={<Admin />}
-                            requiredRole="admin"  
+                            requiredRole="admin"  // Only allow users with "admin" role
                         />
                     } />
 

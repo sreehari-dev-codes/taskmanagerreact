@@ -9,8 +9,7 @@ function ProjectTable(props) {
     const [openEdit, setEditOpen] = useState(false);
     const [id, setId] = useState("string");
     const [editId, setEditId] = useState("string");
-    const API_URL =
-      "https://taskmanagerreact-4.onrender.com/api/admin/deleteTask";
+    const API_URL = "https://taskmanagerreact-4.onrender.com/api/admin/deleteTask";
 
     const opendeleteModal = (id) => {
         setId(id);
