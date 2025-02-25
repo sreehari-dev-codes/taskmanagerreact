@@ -1,0 +1,48 @@
+$primary-bg-color: #f4f4f4;
+$border-color: #ddd;
+$header-bg-color: #e0e0e0;
+$padding: 10px;
+
+.project-table {
+    width: 98%;
+    padding: 20px;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: $padding;
+        border-bottom: 1px solid $border-color;
+        text-align: left;
+    }
+
+    th {
+        background-color: $header-bg-color;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: $primary-bg-color;
+    }
+
+    tr:hover {
+        background-color: #f0f0f0;
+    }
+}
+
+.edit-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:nth-child(1) {
+    color: red;
+    border: none;
+    background-color: transparent;
+}
+
+button:nth-child(2) {
+    color: #4d2114;
+    border: none;
+    background-color: transparent;
+}

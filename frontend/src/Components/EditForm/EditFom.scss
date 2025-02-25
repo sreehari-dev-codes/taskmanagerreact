@@ -1,0 +1,21 @@
+.main-popup {
+    position: fixed; /* Position it over the screen */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%; /* Cover the full width */
+    height: 100%; /* Cover the full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dimmed background */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the popup */
+    align-items: center; /* Vertically center the popup */
+    z-index: 99; /* Ensure it appears above other content */
+}
+
+.popup {
+    width: 400px; /* Fixed width */
+    background-color: #fff; /* White background for the popup */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 100; /* Ensure popup content appears above the dimmed background */
+}

@@ -1,0 +1,87 @@
+.main-popup {
+    position: fixed; /* Position it over the screen */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%; /* Cover the full width */
+    height: 100%; /* Cover the full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dimmed background */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the popup */
+    align-items: center; /* Vertically center the popup */
+    z-index: 99; /* Ensure it appears above other content */
+}
+
+.popup {
+    width: 400px; /* Fixed width */
+    background-color: #fff; /* White background for the popup */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 100; /* Ensure popup content appears above the dimmed background */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 15px; /* Add consistent spacing between inputs */
+
+    .form-input {
+        display: flex;
+        flex-direction: column; /* Align label and input vertically */
+        gap: 5px; /* Add space between label and input */
+        align-items: baseline;
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        select {
+            width: 100%; /* Full width inside the container */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 14px;
+
+            &:focus {
+                outline: none;
+                border-color: #007bff; /* Highlight input on focus */
+            }
+        }
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons are spaced out */
+    margin-top: 20px; /* Add spacing between buttons and the form */
+
+    button {
+        flex: 1; /* Ensure buttons are evenly sized */
+        margin: 0 5px; /* Add space between buttons */
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:nth-child(1) {
+            /* Cancel button */
+            background-color: #ccc;
+            color: #333;
+        }
+
+        &:nth-child(2) {
+            /* Delete button */
+            background-color: #f44336;
+            color: #fff;
+
+            &:hover {
+                background-color: #d32f2f;
+                color: #fff;
+            }
+        }
+    }
+}

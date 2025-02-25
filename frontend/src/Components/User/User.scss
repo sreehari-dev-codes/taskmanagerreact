@@ -1,0 +1,39 @@
+.user-table {
+    width: 90%;
+
+    overflow: scroll;
+    background-color: #ebe6c3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    thead {
+        tr {
+            th {
+                font-size: 15px;
+                color: black;
+                text-align: left;
+                padding: 10px;
+            }
+        }
+    }
+
+    tbody {
+       
+        tr {
+            td {
+                font-size: 14px;
+                color: black;
+                padding: 10px;
+                
+            }
+            .link {
+                text-decoration: none;
+                font-weight: bold;
+                i {
+                    font-weight: bold;
+                    color: #4d2114;
+                }
+            }
+        }
+    }
+}
