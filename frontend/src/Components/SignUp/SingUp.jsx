@@ -9,7 +9,7 @@ function SignUp() {
     const navigate = useNavigate(); // Initialize useNavigate hook
     const dispatch = useDispatch(); // Initialize redux di
    
-    const API_URL = "http://localhost:3005";
+    const API_URL = "https://taskmanagerreact-4.onrender.com";
 
     const [input, setInput] = useState({
         name: "",

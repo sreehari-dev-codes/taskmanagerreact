@@ -12,7 +12,8 @@ function EditForm(props) {
         date: "",
     });
 
-    const API_URL = "http://localhost:3005/api/admin/getProjectByUser";
+    const API_URL =
+      "https://taskmanagerreact-4.onrender.com/api/admin/getProjectByUser";
 
     // function to fetch edit data
     const EditFormView = async () => {
@@ -31,7 +32,7 @@ function EditForm(props) {
                 date: formattedDate || "",
             });
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("Successfully found data:", data);
             }
 
@@ -65,7 +66,7 @@ function EditForm(props) {
 
         try {
             const response = await axios.post(
-              "http://localhost:3005/api/admin/updateUserTask",
+              "https://taskmanagerreact-4.onrender.com/api/admin/updateUserTask",
               { id, ...project },
               {
                 headers: { "Content-Type": "application/json" },

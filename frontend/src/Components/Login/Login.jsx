@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
     //localhost linkz
     const navigate = useNavigate();
-    const API_URL = "http://localhost:3005";
+    const API_URL = "https://taskmanagerreact-4.onrender.com";
     const [input, setInput] = useState({ email: "", password: "" });
 
     // initilize usestate error setting
