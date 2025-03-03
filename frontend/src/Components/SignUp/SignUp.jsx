@@ -8,7 +8,7 @@ import { setUser } from "../../Redux/userD/User";
 function SignUp() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const API_URL = "https://taskmanagerreact-4.onrender.com";
+  const API_URL = "http://localhost:3005";
 
   const [input, setInput] = useState({
     name: "",

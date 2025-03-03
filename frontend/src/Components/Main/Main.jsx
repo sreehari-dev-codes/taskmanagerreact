@@ -35,7 +35,7 @@ function Main() {
                     });
 
                     // Log the response data
-                    console.log(response.data, "kk");
+                    console.log(response.data);
                     dispatch(setUser(response.data.user));
                 } catch (error) {
                     // Handle errors gracefully

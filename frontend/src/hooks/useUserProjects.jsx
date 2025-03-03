@@ -5,8 +5,7 @@ const useUserProjects = userId => {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_URL =
-    "https://taskmanagerreact-4.onrender.com/api/admin/user/project";
+  const API_URL = "http://localhost:3005/api/admin/user/project";
 
   const getUserProject = async () => {
     setIsLoading(true);

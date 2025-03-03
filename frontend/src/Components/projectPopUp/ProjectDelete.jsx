@@ -5,8 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function ProjectDelete({ setOpen, id, getAllProject }) {
-  const API_URL =
-    "https://taskmanagerreact-4.onrender.com/api/admin/deleteTask"; // ✅ Ensure this is correct
+  const API_URL = "http://localhost:3005/api/admin/deleteTask"; // ✅ Ensure this is correct
 
   const DeleteProject = async () => {
     console.log("Deleting Task ID:", id);

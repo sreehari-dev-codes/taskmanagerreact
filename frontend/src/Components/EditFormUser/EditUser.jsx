@@ -4,7 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function EditUser(props) {
-    const API_URL = "https://taskmanagerreact-4.onrender.com/api/admin";
+    const API_URL = "http://localhost:3005/api/admin";
     const { setOpenEdit, editId, getUserProject } = props;
     console.log(editId);
     const [details, setDetails] = useState({

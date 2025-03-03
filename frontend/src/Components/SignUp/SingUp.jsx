@@ -9,7 +9,7 @@ function SignUp() {
     const navigate = useNavigate(); // Initialize useNavigate hook
     const dispatch = useDispatch(); // Initialize redux di
    
-    const API_URL = "https://taskmanagerreact-4.onrender.com";
+    const API_URL = "http://localhost:3005";
 
     const [input, setInput] = useState({
         name: "",
@@ -37,6 +37,7 @@ function SignUp() {
         });
     };
 
+    // function to validiate form
 
     const validiate = () => {
         let valid = true;
@@ -70,6 +71,8 @@ function SignUp() {
 
         return valid;
     };
+
+    //handleSubmit
     const handleSignUpSubmit = async (event) => {
         event.preventDefault();
 
@@ -83,6 +86,7 @@ function SignUp() {
         }
 
         try {
+            // setload(true);
             const response = await axios.post(`${API_URL}/api/user`, input, {
                 headers: { "Content-Type": "application/json" },
             });
@@ -90,6 +94,7 @@ function SignUp() {
             console.log(response.data, "registerUser");
             const userInfo = localStorage.setItem("userinfo", JSON.stringify(response.data));
 
+            //saving redux store
             if (userInfo) {
                 const { _id, name, email } = userInfo;
 
@@ -154,6 +159,8 @@ function SignUp() {
                             />
                             {error.confirm_password ? <span className="error">{error.confirm_password}</span> : ""}
                         </div>
+
+                        {/* {load !==true? "" :<Load/>} */}
 
                         <button type="submit" className="btn" onClick={handleSignUpSubmit}>
                             Sign Up
