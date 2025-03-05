@@ -10,7 +10,6 @@ import Cookies from "js-cookie";
 
 function Admin() {
   const user = useSelector(state => state.user);
-  const [users, setUser] = useState([]);
   const [project, setProject] = useState([]);
   const [load, setLoad] = useState(false);
   const [openFrom, setOpenForm] = useState(false);
