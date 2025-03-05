@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import SignUp from "../SignUp/SingUp";
+import SignUp from '../SignUp/SignUp'
 import Login from "../Login/Login";
 import User from "../User/User";
 import Admin from "../Admin/Admin";

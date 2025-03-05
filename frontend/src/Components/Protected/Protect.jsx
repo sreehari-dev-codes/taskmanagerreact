@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux"; // In case you need to access Redux state
+
 
 const ProtectedRoute = ({ element, requiredRole }) => {
     const navigate = useNavigate();
