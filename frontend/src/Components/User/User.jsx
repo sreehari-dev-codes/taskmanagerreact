@@ -3,14 +3,14 @@ import "./User.scss";
 import { useSelector } from "react-redux";
 import EditUser from "../EditFormUser/EditUser";
 import ClipLoader from "react-spinners/ClipLoader";
-import useUserProjects from "../../hooks/useUserProjects"; 
+import useUserProjects from "../../hooks/useUserProjects"; // Import the custom hook
 
 function User() {
     const data = useSelector((state) => state.user);
     const [openEdit, setOpenEdit] = useState(false);
     const [editId, setEditId] = useState("");
 
-    const { projects, isLoading, getUserProject } = useUserProjects(data.id); 
+    const { projects, isLoading, getUserProject } = useUserProjects(data.id); // Using the custom hook
 
     const openEditForm = (id) => {
         setOpenEdit(true);

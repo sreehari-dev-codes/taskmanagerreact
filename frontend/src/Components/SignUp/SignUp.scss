@@ -27,32 +27,43 @@ img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 410px;
-    height: auto; // Allow flexible height to avoid cutoff
+    height: 500px; // Fixed height to prevent expansion
     margin: 0 auto;
-    overflow: auto;
-    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Prevent unwanted expansion
 
     h1 {
         color: #4d2114;
         font-size: 26px;
-        line-height: 45px;
         font-weight: 600;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        padding-bottom: 10px;
+        z-index: 10;
     }
 
     form {
-        display: flex;
+    display: flex;
         flex-direction: column;
-        gap: 20px;
-
+        gap: 15px;
+        overflow-y: auto;
+        max-height: 350px;
+        padding-right: 5px;
+        scrollbar-width: none;
+          
+            -ms-overflow-style: none;
+            
         .form-group {
             display: flex;
             flex-direction: column;
             position: relative;
-            margin-bottom: 5px;
 
             input {
                 width: 100%;
-                padding: 10px 11px;
+                padding: 10px;
                 border-radius: 10px;
                 outline: none;
                 border: none;
@@ -67,14 +78,26 @@ img {
             .error {
                 color: red;
                 font-size: 14px;
-                min-height: 18px; // ✅ Reserves space for error messages
+                min-height: 18px;
                 display: block;
             }
         }
+    }
+form::-webkit-scrollbar {
+    display: none;
+   
+}
+    .button-container {
+        position: sticky;
+        bottom: 0;
+        background-color: #fff;
+        padding-top: 10px;
+        text-align: center;
+        z-index: 10;
 
-        button {
+        .btn {
             width: 100%;
-            background-color: #dc2ed0;
+            background-color:#e197dc;
             padding: 9px;
             color: white;
             border: none;

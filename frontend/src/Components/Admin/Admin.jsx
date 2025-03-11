@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 
 function Admin() {
   const user = useSelector(state => state.user);
+  const [users, setUser] = useState([]);
   const [project, setProject] = useState([]);
   const [load, setLoad] = useState(false);
   const [openFrom, setOpenForm] = useState(false);
@@ -23,12 +24,12 @@ function Admin() {
     try {
       setLoad(true);
       const token = Cookies.get("token");
-    const response = await axios.get(
-      "http://localhost:3005/api/admin/getUsersproject",
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+      const response = await axios.get(
+        "http://localhost:3005/api/admin/getUsersproject",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       const data = response.data;
       setProject(data);
@@ -66,9 +67,6 @@ function Admin() {
           <div className="nav">
             <span style={{ color: "white" }} onClick={handleForm}>
               Create New Task
-            </span>
-            <span style={{ color: "white" }} onClick={logout}>
-              Log Out
             </span>
           </div>
         </div>

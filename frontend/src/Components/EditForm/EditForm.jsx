@@ -31,7 +31,7 @@ function EditForm(props) {
                 date: formattedDate || "",
             });
 
-            if (response.status === 201) {
+            if (response.status === 200) {
                 console.log("Successfully found data:", data);
             }
 
