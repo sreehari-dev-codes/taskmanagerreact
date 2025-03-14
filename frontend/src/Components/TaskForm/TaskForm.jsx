@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./TaskFrom.scss";
 import { useSelector } from "react-redux";
@@ -7,7 +6,7 @@ import Swal from "sweetalert2";
 
 function TaskForm(props) {
   const API_URL = "http://localhost:3005";
-  const managerId = useSelector(state => state.user?.id); // Ensure managerId exists
+  const managerId = useSelector(state => state.user?.id); 
 
   const { setOpenForm, getAllProject } = props;
 
@@ -15,7 +14,6 @@ function TaskForm(props) {
     setOpenForm(false);
   };
 
-  // Initialize task form state
   const [value, setValue] = useState({
     email: "",
     projectName: "",
@@ -23,7 +21,6 @@ function TaskForm(props) {
     date: "",
   });
 
-  // Initialize error message state
   const [errors, setErrors] = useState({
     email: "",
     projectName: "",
@@ -31,7 +28,6 @@ function TaskForm(props) {
     date: "",
   });
 
-  // Handle form changes
   const createTaskOnChange = event => {
     const { name, value } = event.target;
     setValue(previous => ({
@@ -40,7 +36,6 @@ function TaskForm(props) {
     }));
   };
 
-  // Validate task form
   const validate = () => {
     let valid = true;
     const newErrors = { email: "", projectName: "", language: "", date: "" };
@@ -49,27 +44,22 @@ function TaskForm(props) {
       newErrors.email = "Email is required";
       valid = false;
     }
-
     if (!value.projectName) {
       newErrors.projectName = "Project name is required";
       valid = false;
     }
-
     if (!value.language) {
       newErrors.language = "Language is required";
       valid = false;
     }
-
     if (!value.date) {
       newErrors.date = "Date is required";
       valid = false;
     }
-
     setErrors(newErrors);
     return valid;
   };
 
-  // Handle task creation
   const createTaskHandler = async event => {
     event.preventDefault();
 
@@ -113,23 +103,18 @@ function TaskForm(props) {
         });
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
-        Swal.fire({
-          title: "Error!",
-          text: error.response.data.message || "This email is not logged.",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      } else {
-        Swal.fire({
-          title: "Error!",
-          text: "Something went wrong. Please try again later.",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      }
+      Swal.fire({
+        title: "Error!",
+        text:
+          error.response?.data?.message ||
+          "Something went wrong. Please try again later.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
+
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <div className="main-popup">
@@ -184,6 +169,8 @@ function TaskForm(props) {
                 name="date"
                 onChange={createTaskOnChange}
                 value={value.date}
+                min={today}
+                required
               />
               {errors.date && <span className="error">{errors.date}</span>}
             </div>
