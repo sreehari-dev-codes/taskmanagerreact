@@ -9,7 +9,7 @@ function Hero() {
             <div className="hero-content">
               <h1> Capture ideas effortlessly, one note at a time.</h1>
               <h3>Capture ideas. Organize thoughts. Achieve more. </h3>
-              <button>Try for Free</button>
+              
             </div>
 
             <div className="hero-image">

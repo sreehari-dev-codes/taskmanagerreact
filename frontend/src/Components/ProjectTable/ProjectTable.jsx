@@ -40,7 +40,7 @@ function ProjectTable(props) {
                 <tbody>
                     {project.map((project, index) => (
                         <tr key={index}>
-                            <td>{index}</td>
+                            <td>{index +1}</td>
                             <td>{project.projectUser.name}</td>
                             <td>{project.projectName}</td>
                             <td>{project.language}</td>

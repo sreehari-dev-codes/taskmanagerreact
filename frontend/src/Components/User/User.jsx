@@ -38,7 +38,7 @@ function User() {
               alt="No tasks available"
               className="no-tasks-image"
             />
-            <p >No tasks have been added yet.</p>
+            <p>No tasks have been added yet.</p>
           </div>
         ) : (
           <div className="userProfile">
@@ -55,7 +55,7 @@ function User() {
               <tbody>
                 {projects.map((value, index) => (
                   <tr key={index}>
-                    <td>{index}</td>
+                    <td>{index + 1}</td> {/* Start index from 1 */}
                     <td>{value.projectName}</td>
                     <td>{value.language}</td>
                     <td>{value.status}</td>
